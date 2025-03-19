@@ -1,0 +1,30 @@
+.hero{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background: linear-gradient(#000000e4, transparent);
+    }
+    video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width:700px){
+    .hero{
+        height: 500px;
+    }
+}
+@media (max-width:500px){
+    .hero{
+        height: 250px;
+    }
+}

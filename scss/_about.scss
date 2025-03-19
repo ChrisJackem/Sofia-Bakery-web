@@ -1,0 +1,105 @@
+.about{
+    &_title{
+        margin-top: 90px;
+        text-align: center;
+        margin-bottom: 40px;
+        font-weight: 500;
+    }
+    .a_img{
+        width: 50%;
+        position: relative;
+        img{
+            border-radius: 20px;
+        }
+        span{
+            position: absolute;
+            top: 145px;
+            right: 75px;
+            border: 8px solid #fff;
+            color: #fff;
+            background: $bg-primary;
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            transition: .3s;
+            &:hover{
+                background: #BEA087;
+            }
+        }
+    }
+
+    .a_context{
+        width: 50%;
+        .a_title{
+            font-size: 30px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .a_desc_1{
+            color: #999;
+            line-height: 2;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .a_desc_2{
+            color: #999;
+            line-height: 2;
+            font-size: 18px;
+        }
+
+    }
+
+    .a_box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1100px) {
+    .a_box{
+        flex-direction: column;
+    }
+
+    .about_wrapper{
+        position: relative;
+    }
+
+    .a_img{
+        position: relative;
+        width: 100%;
+        span{
+            top: 120px !important;
+            right: -40px !important;
+            height: 90px !important;
+            width: 90px !important; 
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .a_box{
+        flex-direction: column;
+    }
+
+    .about_wrapper{
+        position: relative;
+    }
+    .a_title{
+        font-size: 22px !important;
+    }
+    .a_img{
+        position: relative;
+        width: 100%;
+        span{
+            top: 90px !important;
+            left: 140px !important;
+            height: 50px !important;
+            width: 50px !important;
+            border: 1px solid #fff; 
+            font-size: 10px;
+        }
+    }
+}

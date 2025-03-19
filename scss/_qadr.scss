@@ -1,0 +1,56 @@
+.qadr {
+    .product_title {
+        margin-top: 70px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .about_cards {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product_card {
+        min-width: 350px;
+        padding: 0px;
+        text-align: center;
+        margin-bottom: 70px;
+
+
+        .context {
+            max-width: 100%;
+        }
+
+        .context_title {
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .context_desc {
+            color: #999;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+@media (max-width:1100px) {
+    .about_cards{
+        flex-direction: column;
+        border-radius: 22px;
+        background: #f6f6f6;
+        padding: 50px;
+    }
+}
+@media (max-width:700px) {
+    
+}
+@media (max-width:450px){
+    .context{
+        font-size: 12px;
+    }
+}
