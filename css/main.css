@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
-    --color-neutral: #FBF2ED;
-    --color-primary: #CDD5C6;
-    --color-accent: #CDEFFE;
+    --color-background: #FFF8F0;    
+    --color-primary: #D88C5A;
 }
 
 body, html{
@@ -13,6 +12,8 @@ body, html{
     box-sizing: border-box;
     min-height: 100dvh;
     font-family: 'Inter', 'Roboto', sans-serif;
+    background-color: var(--color-background);
+    
 }
 
 main{
@@ -66,6 +67,7 @@ section h2{
 header, footer{
     display: flex;
     background-color: var(--color-primary);
+    color: var(--color-background);
     padding: 1rem;
 }
 header > *, footer > *{
@@ -95,11 +97,12 @@ nav ul {
 nav a{
     text-decoration: none;
     color: inherit;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
 }
 nav a[aria-current="page"]{
     font-weight: 700;
+    text-decoration: wavy underline;
 }
 #nav-logo{
     width: 100px;
@@ -128,7 +131,7 @@ textarea{
     font-weight: 600;
     padding: 0.5rem 1rem;
     margin-top: 1rem;
-    background-color: var(--color-accent);
+    background-color: var(--color-primary);
     border: 1px solid black;
     cursor: pointer;
     border-radius: 2px;

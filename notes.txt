@@ -1,8 +1,10 @@
 server
 npx http-server
 
-color palette
+color palette that I had to discard ????
 #CDD5C6
 #FBF2ED
 #CDEFFE
 #CECED7
+
+https://github.com/ChrisJackem/Sofia-Bakery-web.git
