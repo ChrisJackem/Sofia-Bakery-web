@@ -1,0 +1,8 @@
+server
+npx http-server
+
+color palette
+#CDD5C6
+#FBF2ED
+#CDEFFE
+#CECED7

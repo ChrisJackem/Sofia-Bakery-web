@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    --color-neutral: #FBF2ED;
+    --color-primary: #CDD5C6;
+    --color-accent: #CDEFFE;
+}
+
+body, html{
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    min-height: 100dvh;
+    font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+main{
+    padding: 2rem;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+img{
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+}
+
+video{
+    width: 100%;
+    height: auto;
+}
+
+figure{
+    margin: 1rem;
+}
+
+input, select, textarea{
+    font-size: 16px;
+    padding: 0.5rem;
+    font-family: inherit;
+}
+label{
+    font-weight: 500;
+    font-size: 14px;
+}
+
+section{
+    background-color: var(--color-neutral);
+    padding: 1rem;
+    border-radius: 8px;
+}
+section:not(:last-child){
+    margin-bottom: 2rem;
+}
+section h2{
+    margin: 0 0 1.5rem 0;
+}
+
+
+/* Navigation Styles */
+header, footer{
+    display: flex;
+    background-color: var(--color-primary);
+    padding: 1rem;
+}
+header > *, footer > *{
+    margin: 1.5rem;
+}
+header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--color-primary); 
+}
+header > *{
+    margin: 0px;
+}
+nav ul {
+    padding: 0px;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+nav a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 20px;
+    font-weight: 500;
+}
+nav a[aria-current="page"]{
+    font-weight: 700;
+}
+#nav-logo{
+    width: 100px;
+    height: auto;
+}
+
+/** Form Styles **/
+fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+label{
+    font-weight: 500;
+}
+
+textarea{
+    resize: vertical;
+}
+
+.button{
+    margin: 0px auto;
+    width: fit-content;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    background-color: var(--color-accent);
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+@media (min-width: 600px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+}
