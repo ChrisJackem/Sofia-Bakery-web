@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>North Star Bakery - About</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/theme.js" defer></script>
 </head>
 <body>   
     <header>
@@ -17,11 +18,18 @@
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
+        <div class="theme-container">
+            <p>Theme:</p>            
+            <label><input type="radio" name="theme" value="light" checked> Light</label>
+            <label><input type="radio" name="theme" value="dark"> Dark</label>           
+        </div>
     </header>
     <main id="top">
         <h1>About</h1>
         <p>At North Star Bakery, we are passionate about creating exceptional baked goods that bring joy to our community. Our story is rooted in tradition, quality, and a love for baking.</p>
-        <img src="assets/images/bakery-logo_c.png" class="max400" alt="North Star Bakery logo">
+        <div class="max400">
+            <img src="assets/images/bakery-logo_c.png" alt="North Star Bakery logo">
+        </div>
         <br/><br/>
         <section>
             <h2>Story of our bakery</h2>

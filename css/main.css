@@ -1,9 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
-    --color-background: #FFF8F0;    
+/* Default theme is light */
+:root{
+    --color-background: #FFF8F0;
+    --color-input-bg: #FFF;
+    --color-text: #000;    
     --color-primary: #D88C5A;
 }
+
+/* If broweser or OS set the preference for dark mode */
+/* @media (prefers-color-scheme: dark) {
+  :root{
+    --color-background: #000;
+    --color-input-bg: #1d1d1d;
+    --color-text: #FFF;    
+  }
+} */
 
 body, html{
     padding: 0px;
@@ -13,7 +25,7 @@ body, html{
     min-height: 100dvh;
     font-family: 'Inter', 'Roboto', sans-serif;
     background-color: var(--color-background);
-    
+    color: var(--color-text);
 }
 
 main{
@@ -46,10 +58,21 @@ figure{
     max-width: 400px;
 }
 
+.hidden{
+    display: none !important;
+}
+
 input, select, textarea{
     font-size: 16px;
     padding: 0.5rem;
     font-family: inherit;
+    border: 1px solid var(--color-text);
+    background-color: var(--color-input-bg);
+    color: var(--color-text);
+}
+select{
+    color: var(--color-text);
+    background-color: var(--color-input-bg);
 }
 label{
     font-weight: 500;
@@ -71,6 +94,7 @@ section h2{
 
 /* Navigation Styles */
 header, footer{
+    position: relative;
     display: flex;
     background-color: var(--color-primary);
     color: var(--color-background);
@@ -111,16 +135,36 @@ nav a[aria-current="page"]{
     text-decoration: wavy underline;
 }
 #nav-logo{
-    width: 100px;
+    width: 150px;
     height: auto;
 }
 
 /** Form Styles **/
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.validation-text{
+    font-size: 12px;
+    color: var(--color-text);
+    margin: 0;
+    color: red;
+}
+.invalid{
+    border-color: red;
+    outline-color: red;
+    outline-style: solid;
+    outline-width: 1px;
+}
+
+
 fieldset{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem;
+    border-color: var(--color-text);
 }
 label{
     font-weight: 500;
@@ -131,16 +175,36 @@ textarea{
 }
 
 .button{
-    margin: 0px auto;
     width: fit-content;
     font-size: 20px;
     font-weight: 600;
     padding: 0.5rem 1rem;
-    margin-top: 1rem;
     background-color: var(--color-primary);
-    border: 1px solid black;
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
     cursor: pointer;
     border-radius: 2px;
+}
+
+#button-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Theme */
+.theme-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 0.5rem;
+}
+.theme-container p{
+    font-size: 14px;
+    margin: 0;
 }
 
 @media (min-width: 600px) {
