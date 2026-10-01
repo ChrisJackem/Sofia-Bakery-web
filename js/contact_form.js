@@ -1,11 +1,4 @@
-// open calendar when date input is focused
-/* const dateInput = document.getElementById('date');
-if (dateInput) {
-    dateInput.addEventListener('focus', () => {
-        dateInput.showPicker?.();
-    });
-} */
-
+// Reset all form values and localStorage (except theme)
 function resetForm() {
     let allValidation = document.querySelectorAll('.validation-text');
     allValidation.forEach(element => element.textContent = "");
@@ -14,6 +7,13 @@ function resetForm() {
     allInputs.forEach(element => {
         element.classList.remove('invalid');
         element.value = "";
+    });
+
+    // Clear localStorage, leave theme alone
+    Object.keys(localStorage).forEach(key => {
+        if (key !== 'bakery-theme') {
+            localStorage.removeItem(key);
+        }
     });
 }
 
@@ -95,19 +95,38 @@ function validateForm(event) {
 }
 
 // Listeners
-
 document.querySelector('button[type="reset"]').addEventListener('click', resetForm);
 document.querySelector('#contact-form').addEventListener('submit', validateForm);
 
 // Toggle date picker visibility based on request type selection
 var selectedRequestElement = document.getElementById('request-type');
 var datePickerContainer = document.querySelector('#date-container');
-selectedRequestElement.addEventListener('change', (e) => {
-    const selected = e.target.value;
+selectedRequestElement.addEventListener('change', checkRequestType);
+
+function checkRequestType() {
+    const selected = selectedRequestElement.value;
     if (selected == 'inquiry'){
         datePickerContainer.classList.add('hidden');
     }else{
         datePickerContainer.classList.remove('hidden');
     }
-});
+}
 
+// Save input values to localStorage and restore them on load
+const formInputs = document.querySelectorAll('#contact-form input, #contact-form select, #contact-form textarea');
+formInputs.forEach(input => {
+    if (!input.id) return;
+
+    // loading the values
+    const storedValue = localStorage.getItem(`contact-form-${input.id}`);
+    if (storedValue !== null) {
+        input.value = storedValue;
+    }
+
+    // change listener
+    input.addEventListener('change', () => {
+        localStorage.setItem(`contact-form-${input.id}`, input.value);
+    });
+});
+// After loading localStorage values, check the request type
+checkRequestType();
